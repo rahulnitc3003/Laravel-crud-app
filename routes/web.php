@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', 'CreateController@index');
+Route::get('/create', function () {
+    return view('create');
+});
+
+Route::post('/create', 'CreateController@store');
+
+Route::get('/project/{id}', 'CreateController@viewProject');
+Route::get('/update/{id}', 'CreateController@updateViewProject');
+Route::post('/update/{id}', 'CreateController@updateProject');
+Route::get('/delete/{id}', 'CreateController@deleteProject');
